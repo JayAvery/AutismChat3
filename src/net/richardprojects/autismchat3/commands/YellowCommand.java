@@ -51,8 +51,10 @@ public class YellowCommand implements CommandExecutor {
 				msg = msg.replace("{yellow_list}", yellowList);			
 				player.sendMessage(msg);
 				
+				System.out.println("in yellow command");
 				// update the player teams
 				Team playerTeam = AutismChat3.board.getPlayerTeam(player);
+				System.out.println("current team is " + playerTeam);
 				if(playerTeam != null) {
 					String name = playerTeam.getName();
 					if(name.equals("greenTeam")) {
@@ -68,6 +70,7 @@ public class YellowCommand implements CommandExecutor {
 				AutismChat3.yellowTeam.addPlayer(player);
 				for(Player cPlayer : plugin.getServer().getOnlinePlayers()) {
 					cPlayer.setScoreboard(AutismChat3.board);
+					System.out.println("updating scoreboard for " + cPlayer + " " + AutismChat3.board);
 				}
 				
 				new SwitchYellowTask(player.getUniqueId()).runTaskAsynchronously(plugin);

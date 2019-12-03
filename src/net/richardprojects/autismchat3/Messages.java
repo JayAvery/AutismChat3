@@ -15,9 +15,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.libs.jline.internal.Log;
 
 public class Messages {
 	public static String color_red;
@@ -102,7 +100,7 @@ public class Messages {
 			messagesConfig = new YamlConfiguration();
 			messagesConfig.load(AutismChat3.messages);
 		} catch (Exception e) {
-			Log.info(" There was an error setting up the config file...");
+			AutismChat3.log.info(" There was an error setting up the config file...");
 			e.printStackTrace();
 		}
 	}

@@ -37,6 +37,7 @@ import net.richardprojects.autismchat3.events.LoginEvent;
 import net.richardprojects.autismchat3.events.PDeathEvent;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -84,13 +85,14 @@ public class AutismChat3 extends JavaPlugin {
 		manager = Bukkit.getScoreboardManager();
 		board = manager.getNewScoreboard();
 		yellowTeam = board.registerNewTeam("yellowTeam");
-		yellowTeam.setPrefix(Utils.colorCodes(Messages.color_yellow));
+		yellowTeam.setColor(ChatColor.YELLOW);
 		blueTeam = board.registerNewTeam("blueTeam");
-		blueTeam.setPrefix(Utils.colorCodes(Messages.color_blue));
+		blueTeam.setColor(ChatColor.BLUE);
 		redTeam = board.registerNewTeam("redTeam");
+		redTeam.setColor(ChatColor.DARK_RED);
 		redTeam.setPrefix(Utils.colorCodes(Messages.color_red));
 		greenTeam = board.registerNewTeam("greenTeam");
-		greenTeam.setPrefix(Utils.colorCodes(Messages.color_green));
+		greenTeam.setColor(ChatColor.DARK_GREEN);
 		
 		loadPlayerData();
 		loadPartyData();

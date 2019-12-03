@@ -11,13 +11,10 @@
 package net.richardprojects.autismchat3;
 
 import java.io.BufferedReader;
-import java.io.PrintWriter;
 import java.io.InputStreamReader;
-
-import net.md_5.bungee.api.ChatColor;
-
+import java.io.PrintWriter;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.libs.jline.internal.Log;
+import net.md_5.bungee.api.ChatColor;
 
 public class Config {
 
@@ -54,7 +51,7 @@ public class Config {
 			config = new YamlConfiguration();
 			config.load(plugin.config);
 		} catch (Exception e) {
-			Log.info(" There was an error setting up the config file...");
+			AutismChat3.log.info(" There was an error setting up the config file...");
 			e.printStackTrace();
 		}
 	}
